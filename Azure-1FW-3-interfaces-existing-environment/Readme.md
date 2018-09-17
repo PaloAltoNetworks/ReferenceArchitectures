@@ -10,7 +10,7 @@ This template deploys a (3) interface Palo Alto Networks VM-Series firewall as s
 
 
 
-This template was created to support the deployment of a 4 interface Palo Alto Networks firewall into an existing Microsoft Azure environment that has the following items already deployed:
+This template was created to support the deployment of a 3 interface Palo Alto Networks firewall into an existing Microsoft Azure environment that has the following items already deployed:
 
                     - VNET (assumes "AzureRefArch-VNET" is already created with following subnets):
                       - Management (192.168.1.0/24)
