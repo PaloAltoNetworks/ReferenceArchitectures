@@ -124,7 +124,7 @@
     },
     "subnet0StartAddress": {
       "type": "string",
-      "defaultValue": "192.168.0.6",
+      "defaultValue": "192.168.1.6",
       "metadata": {
         "description": "Management subnet start address"
       }
