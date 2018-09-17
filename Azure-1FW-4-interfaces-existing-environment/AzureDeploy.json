@@ -155,7 +155,7 @@
       "type": "string",
       "defaultValue": "10.5.15.0/24",
       "metadata": {
-        "description": "EXISTING DMZ subnet CIDR"
+        "description": "EXISTING VPN subnet CIDR"
       }
     },
     "subnet0StartAddress": {
