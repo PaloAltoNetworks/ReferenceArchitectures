@@ -126,28 +126,28 @@
       "type": "string",
       "defaultValue": "192.168.1.6",
       "metadata": {
-        "description": "Management subnet start address"
+        "description": "Management subnet static address"
       }
     },
     "subnet1StartAddress": {
       "type": "string",
       "defaultValue": "172.16.1.6",
       "metadata": {
-        "description": "Public subnet start address"
+        "description": "Public subnet static address"
       }
     },
     "subnet2StartAddress": {
       "type": "string",
       "defaultValue": "172.16.2.6",
       "metadata": {
-        "description": "Private subnet start address"
+        "description": "Private subnet static address"
       }
     },
     "subnet3StartAddress": {
       "type": "string",
       "defaultValue": "10.5.15.6",
       "metadata": {
-        "description": "VPN subnet start address"
+        "description": "VPN subnet static address"
       }
     },
     "adminUsername": {
