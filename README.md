@@ -27,6 +27,6 @@ Reference architectures apply a platform-centric approach to secure designs for 
  This templates is also used for firewalls in the Shared Design Model.
  A firewall with (1) management interface and (3) dataplane interfaces is deployed.
  
- Specific details on the options and requirements for each template is covered in the respective README files.
+ Specific details on the options and requirements for each template are covered in the respective README files.
 
 If you have feedback or suggestions, send us an email at referencearchitectures@paloaltonetworks.com
