@@ -53,4 +53,4 @@ The following VMs are supported:
         
 NOTE: Make sure the VMs are supported in the specific Storage Account Type and Azure Region.
 
-After deployment, this firewall can be integrated into Azure load balancer backend pools using the Azure Resource Manager Portal.
+After deployment, this firewall can be integrated into Azure load balancer backend pools or Azure application gateway backend pools using the Azure Resource Manager Portal.
