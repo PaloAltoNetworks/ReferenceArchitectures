@@ -15,31 +15,40 @@ Reference architectures apply a platform-centric approach to secure designs for 
  - **Deployment Guide For Microsoft Azure - Shared Design Model**
  
  ### Azure-1FW-3-interfaces-existing-environment-BS
- This template is used for Inbound firewalls in the Single VNet Design Model (Dedicated Inbound Option) with automated bootstrapping.  
- This template is used for Inbound firewalls in the Scaled Design Model with automated bootstrapping.  
  A firewall with (1) management interface and (2) dataplane interfaces is deployed.
  
- ### Azure-1FW-3-interfaces-existing-environment
- This template is used for Inbound firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
- This template is used for Inbound firewalls in the Scaled Design Model.  
+ This template is used automatic bootstrapping with:
+ - Inbound firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
+ - Inbound firewalls in the Scaled Design Model.  
+
+  ### Azure-1FW-3-interfaces-existing-environment
  A firewall with (1) management interface and (2) dataplane interfaces is deployed.
- 
- ### Azure-1FW-4-interfaces-existing-environment-BS
- This template is used for Outbound/East-West/Backhaul firewalls in the Single VNet Design Model (Dedicated Inbound Option) with automated bootstrapping.  
- This template is used for firewalls in the Single VNet Design Model (Common Firewall Option) with automated bootstrapping.  
- This template is used for Outbound/East-West/Backhaul firewalls in the Scaled Design Model with automated bootstrapping.  
- This templates is also used for firewalls in the Shared Design model with automated bootstrapping.  
- A firewall with (1) management interface and (3) dataplane interfaces is deployed.
+  
+ This template is used for: 
+ - Inbound firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
+ - Inbound firewalls in the Scaled Design Model.  
+
+  ### Azure-1FW-4-interfaces-existing-environment-BS
+  A firewall with (1) management interface and (3) dataplane interfaces is deployed.
+  
+ This template is used for automatic bootstrapping with:
+ - Outbound/East-West/Backhaul firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
+ - Firewalls in the Single VNet Design Model (Common Firewall Option).  
+ - Outbound/East-West/Backhaul firewalls in the Scaled Design Model.  
+ - Firewalls in the Shared Design model.  
+
  
  ### Azure-1FW-4-interfaces-existing-environment
- This template is used for firewalls in the Transit VNet Design Model.  
- This template is used for Outbound/East-West/Backhaul firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
- This template is used for firewalls in the Single VNet Design Model (Common Firewall Option).  
- This template is used for Outbound/East-West/Backhaul firewalls in the Scaled Design Model.  
- This templates is also used for firewalls in the Shared Design Model.  
- A firewall with (1) management interface and (3) dataplane interfaces is deployed.
- 
- Specific details on the options and requirements for each template are covered in the respective README files.
+  A firewall with (1) management interface and (3) dataplane interfaces is deployed.
+  
+  This template is used for:
+ - Firewalls in the Transit VNet Design Model.  
+ - Outbound/East-West/Backhaul firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
+ - Firewalls in the Single VNet Design Model (Common Firewall Option).  
+ - Outbound/East-West/Backhaul firewalls in the Scaled Design Model.  
+ - Firewalls in the Shared Design Model.  
+
+  Specific details on the options and requirements for each template are covered in the respective README files.
 
 If you have feedback or suggestions, send us an email at referencearchitectures@paloaltonetworks.com
 
