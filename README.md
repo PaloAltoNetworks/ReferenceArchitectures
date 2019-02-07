@@ -5,28 +5,46 @@ Reference architectures apply a platform-centric approach to secure designs for 
 
  These templates support the Scaled Design Model and Shared Design Model as described in the **Reference Architecture Guide for Microsoft Azure**.
  
- The proper use of each template is described in the deployment guides:
+ The proper use of each template is described in the February 2019 (current) deployment guides:
+ - **Deployment Guide For Microsoft Azure - Transit VNet Design Model**
+ - **Deployment Guide For Microsoft Azure - Single VNet Design Model (Common Firewall Option)**
+ - **Deployment Guide For Microsoft Azure - Single VNet Design Model (Dedicated Inbound Option)**
+ 
+ These templates are also used for the August 2018 deployment guides:
  - **Deployment Guide For Microsoft Azure - Scaled Design Model**
  - **Deployment Guide For Microsoft Azure - Shared Design Model**
  
  ### Azure-1FW-3-interfaces-existing-environment-BS
- This template is used for Inbound firewalls in the Scaled Design Model with automated bootstrapping.
+ This template is used for Inbound firewalls in the Single VNet Design Model (Dedicated Inbound Option) with automated bootstrapping.  
+ This template is used for Inbound firewalls in the Scaled Design Model with automated bootstrapping.  
  A firewall with (1) management interface and (2) dataplane interfaces is deployed.
  
  ### Azure-1FW-3-interfaces-existing-environment
- This template is used for Inbound firewalls in the Scaled Design Model.
+ This template is used for Inbound firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
+ This template is used for Inbound firewalls in the Scaled Design Model.  
  A firewall with (1) management interface and (2) dataplane interfaces is deployed.
  
  ### Azure-1FW-4-interfaces-existing-environment-BS
- This template is used for Outbound/East-West/Backhaul firewalls in the Scaled Design Model with automated bootstrapping.
- This templates is also used for firewalls in the Shared Design model with automated bootstrapping.
+ This template is used for Outbound/East-West/Backhaul firewalls in the Single VNet Design Model (Dedicated Inbound Option) with automated bootstrapping.  
+ This template is used for firewalls in the Single VNet Design Model (Common Firewall Option) with automated bootstrapping.  
+ This template is used for Outbound/East-West/Backhaul firewalls in the Scaled Design Model with automated bootstrapping.  
+ This templates is also used for firewalls in the Shared Design model with automated bootstrapping.  
  A firewall with (1) management interface and (3) dataplane interfaces is deployed.
  
  ### Azure-1FW-4-interfaces-existing-environment
- This template is used for Outbound/East-West/Backhaul firewalls in the Scaled Design Model.
- This templates is also used for firewalls in the Shared Design Model.
+ This template is used for firewalls in the Transit VNet Design Model.  
+ This template is used for Outbound/East-West/Backhaul firewalls in the Single VNet Design Model (Dedicated Inbound Option).  
+ This template is used for firewalls in the Single VNet Design Model (Common Firewall Option).  
+ This template is used for Outbound/East-West/Backhaul firewalls in the Scaled Design Model.  
+ This templates is also used for firewalls in the Shared Design Model.  
  A firewall with (1) management interface and (3) dataplane interfaces is deployed.
  
  Specific details on the options and requirements for each template are covered in the respective README files.
 
 If you have feedback or suggestions, send us an email at referencearchitectures@paloaltonetworks.com
+
+# Support
+
+This template/solution is released under an as-is, best effort, support policy. These scripts should be seen as community supported and Palo Alto Networks will contribute our expertise as and when possible. We do not provide technical support or help in using or troubleshooting the components of the project through our normal support options such as Palo Alto Networks support teams, or ASC (Authorized Support Centers) partners and backline support options. The underlying product used (the VM-Series firewall) by the scripts or templates are still supported, but the support is only for the product functionality and not for help in deploying or using the template or script itself. Unless explicitly tagged, all projects or work posted in our GitHub repository (at https://github.com/PaloAltoNetworks) or sites other than our official Downloads page on https://support.paloaltonetworks.com are provided under the best effort policy.
+
+For assistance from the community, please post your questions and comments either to the GitHub page where the solution is posted or on our Live Community site dedicated to public cloud discussions at https://live.paloaltonetworks.com/t5/AWS-Azure-Discussions/bd-p/AWS_Azure_Discussions
