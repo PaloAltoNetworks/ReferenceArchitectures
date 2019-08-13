@@ -3,6 +3,8 @@
 
 Reference architectures apply a platform-centric approach to secure designs for key customer environments, including SaaS, cloud, and data center. Based on validated configurations and best practices, they provide technical and design guidance in support of technical customer engagements.
 
+Please visit the [Palo Alto Networks Reference Architectures](https://www.paloaltonetworks.com/referencearchitectures) site to access all architecture and deployment guides.
+
  These templates support the various Design Models and Options described in the **[Reference Architecture Guide for Microsoft Azure](https://www.paloaltonetworks.com/resources/guides/azure-architecture-guide)**.
  
  The proper use of each template is described in the February 2019 (current) deployment guides:
