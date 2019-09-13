@@ -15,13 +15,6 @@
         "description": "Name of the EXISTING storage account used to store the VM's disks"
       }
     },
-    "storageAccountExistingRG": {
-       "type": "string",
-       "defaultValue" : "",
-       "metadata": {
-          "description": "Storage Account's Resource Group."
-       }
-    },
     "fwAvSet": {
        "type": "string",
        "metadata": {
@@ -88,13 +81,6 @@
       },
       "defaultValue": "AzureRefArch-VNET"
     },
-    "virtualNetworkAddressPrefix": {
-      "type": "string",
-      "defaultValue": "192.168.1.0/24",
-      "metadata": {
-        "description": "EXISTING Virtual network address CIDR"
-      }
-    },
     "virtualNetworkExistingRGName": {
       "type": "string",
       "defaultValue": "",
@@ -121,27 +107,6 @@
       "defaultValue": "Private",
       "metadata": {
         "description": "Private EXISTING Subnet"
-      }
-    },
-    "subnet0Prefix": {
-      "type": "string",
-      "defaultValue": "192.168.1.0/24",
-      "metadata": {
-        "description": "EXISTING Management subnet CIDR"
-      }
-    },
-    "subnet1Prefix": {
-      "type": "string",
-      "defaultValue": "172.16.1.0/24",
-      "metadata": {
-        "description": "EXISTING Public subnet CIDR"
-      }
-    },
-    "subnet2Prefix": {
-      "type": "string",
-      "defaultValue": "10.5.0.0/24",
-      "metadata": {
-        "description": "EXISTING Private subnet CIDR"
       }
     },
     "subnet0StartAddress": {
@@ -183,13 +148,6 @@
       "metadata": {
         "description": "Name of ARA-VMFW1 Management Public Address"
       }
-    },
-    "nsgName": {
-      "type": "string",
-      "defaultValue": "DefaultNSG",
-      "metadata": {
-        "description": "Name of existing Network Security Group for MGMT FW interface"
-      }
     }
   },
   "variables": {
@@ -200,32 +158,7 @@
     "vnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
     "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
-    "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
-    "publicIPAddressType": "Dynamic",
-    "subnets": [
-      {
-        "name": "[parameters('subnet0Name')]",
-        "properties": {
-          "addressPrefix": "[parameters('subnet0Prefix')]",
-          "networkSecurityGroup": {
-              "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
-          }
-        }
-      },
-      {
-        "name": "[parameters('subnet1Name')]",
-        "properties": {
-          "addressPrefix": "[parameters('subnet1Prefix')]"
-        }
-      },
-      {
-        "name": "[parameters('subnet2Name')]",
-        "properties": {
-          "addressPrefix": "[parameters('subnet2Prefix')]"
-        }
-      }
-    ],
-    "storageAccountId": "[resourceId(parameters('storageAccountExistingRG'),'Microsoft.Storage/StorageAccounts',parameters('storageAccountName'))]"
+    "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]"
   },
   "resources": [
     {
