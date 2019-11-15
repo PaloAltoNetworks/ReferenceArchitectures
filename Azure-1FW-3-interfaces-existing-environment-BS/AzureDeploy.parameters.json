@@ -50,11 +50,11 @@
       "metadata": {
         "description": "Name of the Virtual Network (VNET)"
       },
-      "defaultValue": "AzureRefArch-VNET"
+      "defaultValue": "AzureRA-VNet"
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.110.0.0/16",
       "metadata": {
         "description": "Virtual network address CIDR"
       }
@@ -89,42 +89,42 @@
     },
     "subnet0Prefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.110.255.0/24",
       "metadata": {
         "description": "Management subnet CIDR"
       }
     },
     "subnet1Prefix": {
       "type": "string",
-      "defaultValue": "172.16.1.0/24",
+      "defaultValue": "10.110.129.0/24",
       "metadata": {
         "description": "Public subnet CIDR"
       }
     },
     "subnet2Prefix": {
       "type": "string",
-      "defaultValue": "10.5.0.0/24",
+      "defaultValue": "10.110.0.0/24",
       "metadata": {
         "description": "Private subnet CIDR"
       }
     },
     "subnet0StartAddress": {
       "type": "string",
-      "defaultValue": "192.168.1.8",
+      "defaultValue": "10.110.255.4",
       "metadata": {
         "description": "Management subnet static address"
       }
     },
     "subnet1StartAddress": {
       "type": "string",
-      "defaultValue": "172.16.1.8",
+      "defaultValue": "10.110.129.4",
       "metadata": {
         "description": "Public subnet static address"
       }
     },
     "subnet2StartAddress": {
       "type": "string",
-      "defaultValue": "10.5.0.8",
+      "defaultValue": "10.110.0.4",
       "metadata": {
         "description": "Private subnet start address"
       }
