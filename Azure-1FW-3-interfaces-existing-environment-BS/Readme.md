@@ -9,14 +9,16 @@ This template deploys a (3) interface Palo Alto Networks VM-Series firewall as s
 </p>
 
 
-This template supports VM-Series automated bootstrapping when used with Panorama and you have already created the bootstrap package and deployed to a filesystem in an Azure Storage Account.
+This template supports two deployment options:
+- manual deployment of VM-Series.
+- automated bootstrapping of VM-Series when used with Panorama and you have already created the bootstrap package and deployed to a filesystem in an Azure Storage Account.
 
 This template was created to support the deployment of a 3 interface Palo Alto Networks firewall into an existing Microsoft Azure environment that has the following items already deployed:
 
-                    - VNET (assumes "AzureRefArch-VNET" is already created with following subnets):
-                      - Management (192.168.1.0/24)
-                      - Public (172.16.1.0/24)
-                      - Private (10.5.0.0/24)
+                    - VNET (assumes "AzureRA-VNet" is already created with following subnets):
+                      - Management (10.110.255.0/24)
+                      - Public (10.110.129.0/24)
+                      - Private (10.110.0.0/24)
                     - Resource Group (for the firewall) with the following resources:
                       - Availability Set for the firewall
                       - Storage Account for the firewall VHD
