@@ -9,9 +9,7 @@ This template deploys a (3) interface Palo Alto Networks VM-Series firewall as s
 </p>
 
 
-This template supports two deployment options:
-- manual deployment of VM-Series.
-- automated bootstrapping of VM-Series when used with Panorama and you have already created the bootstrap package and deployed to a filesystem in an Azure Storage Account.
+This template supports manual deployment of VM-Series.
 
 This template was created to support the deployment of a 3 interface Palo Alto Networks firewall into an existing Microsoft Azure environment that has the following items already deployed:
 
