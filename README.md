@@ -7,10 +7,14 @@ Please visit the [Palo Alto Networks Reference Architectures](https://www.paloal
 
  These templates support the various Design Models and Options described in the **[Reference Architecture Guide for Microsoft Azure](https://www.paloaltonetworks.com/resources/guides/azure-architecture-guide)**.
  
+ The proper use of each template is described in the January 2020 (current) deployment guides:
+  - **[Deployment Guide For Microsoft Azure - Transit VNet Design Model](https://www.paloaltonetworks.com/resources/guides/azure-transit-vnet-deployment-guide)**
+   - **[Deployment Guide For Microsoft Azure - Transit VNet Design Model (Common Firewall Option)](https://www.paloaltonetworks.com/resources/guides/azure-single-vnet-common-firewall-deployment-guide)**
+ 
  The proper use of each template is described in the February 2019 (current) deployment guides:
- - **[Deployment Guide For Microsoft Azure - Transit VNet Design Model](https://www.paloaltonetworks.com/resources/guides/azure-transit-vnet-deployment-guide)**
- - **[Deployment Guide For Microsoft Azure - Single VNet Design Model (Common Firewall Option)](https://www.paloaltonetworks.com/resources/guides/azure-single-vnet-common-firewall-deployment-guide)**
- - **[Deployment Guide For Microsoft Azure - Single VNet Design Model (Dedicated Inbound Option)](https://www.paloaltonetworks.com/resources/guides/azure-single-vnet-dedicated-inbound-deployment-guide)**
+ - **Deployment Guide For Microsoft Azure - Transit VNet Design Model**
+ - **Deployment Guide For Microsoft Azure - Single VNet Design Model (Common Firewall Option)**
+ - **Deployment Guide For Microsoft Azure - Single VNet Design Model (Dedicated Inbound Option)**
  
  These templates are also used for the August 2018 deployment guides:
  - **Deployment Guide For Microsoft Azure - Scaled Design Model**
