@@ -9,7 +9,7 @@ Please visit the [Palo Alto Networks Reference Architectures](https://www.paloal
  
  The proper use of each template is described in the January 2020 (current) deployment guides:
   - **[Deployment Guide For Microsoft Azure - Transit VNet Design Model](https://www.paloaltonetworks.com/resources/guides/azure-transit-vnet-deployment-guide)**
-   - **[Deployment Guide For Microsoft Azure - Transit VNet Design Model (Common Firewall Option)](https://www.paloaltonetworks.com/resources/guides/azure-single-vnet-common-firewall-deployment-guide)**
+   - **[Deployment Guide For Microsoft Azure - Transit VNet Design Model (Common Firewall Option)](https://www.paloaltonetworks.com/resources/guides/azure-transit-vnet-deployment-guide-common-firewall-option)**
  
  The proper use of each template is described in the February 2019 deployment guides:
  - **Deployment Guide For Microsoft Azure - Transit VNet Design Model**
