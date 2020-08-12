@@ -18,7 +18,6 @@
     },
     "storageAccountExistingRG": {
        "type": "string",
-       "defaultValue" : "",
        "metadata": {
           "description": "Storage Account's Resource Group."
        },
@@ -236,7 +235,7 @@
                     "version": "[parameters('imageVersion')]"
                 },
                 "osDisk": {
-                    "name": "osdisk",
+                    "name": "[concat(variables('vmName'), '-osdisk']",
                     "managedDisk": {
                       "storageAccountType": "Standard_LRS"
                     },
@@ -249,7 +248,13 @@
                     "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'0'))]"
                   }
                 ]
-            }
+            },
+            "diagnosticsProfile": {
+              "bootDiagnostics": {
+                  "enabled": true,
+                  "storageUri": "[concat('https://', parameters('storageAccountName'), '.blob.core.windows.net/')]"
+              }
+          }
         }
     }
   ]
