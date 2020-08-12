@@ -117,7 +117,8 @@
       "type": "string",
       "metadata": {
         "description": "Username of the administrator account of Panorama"
-      }
+      },
+      "defaultValue": "refarchadmin"
     },
     "adminPassword": {
       "type": "securestring",
