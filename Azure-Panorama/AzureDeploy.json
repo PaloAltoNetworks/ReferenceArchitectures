@@ -146,6 +146,7 @@
     "nicName": "[concat(parameters('vmName'), '-eth')]",
     "vnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
     "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
+    "diskname": "[concat(parameters('vmName'),'-osdisk']",
     "publicIPAddressType": "Dynamic",
     "subnets": [
       {
@@ -235,7 +236,7 @@
                     "version": "[parameters('imageVersion')]"
                 },
                 "osDisk": {
-                    "name": "[concat(parameters('vmName'), '-osdisk']",
+                    "name": "[variables('diskname')]",
                     "managedDisk": {
                       "storageAccountType": "Standard_LRS"
                     },
