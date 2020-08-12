@@ -234,7 +234,7 @@
                 "osDisk": {
                     "name": "osdisk",
                     "managedDisk": {
-                      "storageAccountType": "[parameters('osDiskType')]"
+                      "storageAccountType": "Standard_LRS"
                     },
                     "createOption": "FromImage"
                    }
