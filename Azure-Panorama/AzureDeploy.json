@@ -79,7 +79,7 @@
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.255.0.0/16",
       "metadata": {
         "description": "EXISTING Virtual network address CIDR"
       }
@@ -101,14 +101,14 @@
     },
     "subnet0Prefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.255.0.0/24",
       "metadata": {
         "description": "EXISTING Management subnet CIDR"
       }
     },
     "subnet0StartAddress": {
       "type": "string",
-      "defaultValue": "192.168.1.6",
+      "defaultValue": "10.255.1.4",
       "metadata": {
         "description": "Management subnet static address"
       }
