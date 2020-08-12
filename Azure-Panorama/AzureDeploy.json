@@ -86,7 +86,6 @@
     },
     "virtualNetworkExistingRGName": {
       "type": "string",
-      "defaultValue": "",
       "metadata": {
         "description": "Name of resource group of EXISTING VNET"
       },
