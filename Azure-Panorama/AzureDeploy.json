@@ -13,14 +13,16 @@
       "type": "string",
       "metadata": {
         "description": "Name of the EXISTING storage account used to store the VM's disks"
-      }
+      },
+      "defaultValue": "managementv2diag"
     },
     "storageAccountExistingRG": {
        "type": "string",
        "defaultValue" : "",
        "metadata": {
           "description": "Storage Account's Resource Group."
-       }
+       },
+       "defaultValue": "Management"
     },
     "AvSet": {
        "type": "string",
@@ -87,7 +89,8 @@
       "defaultValue": "",
       "metadata": {
         "description": "Name of resource group of EXISTING VNET"
-      }
+      },
+      "defaultValue": "Management"
     },
     "subnet0Name": {
       "type": "string",
@@ -127,11 +130,12 @@
       "type": "string",
       "metadata": {
         "description": "Name of Panorama's Public Address"
-      }
+      },
+      "defaultValue": "panorama-primary"
     },
     "nsgName": {
       "type": "string",
-      "defaultValue": "DefaultNSG",
+      "defaultValue": "AllowALL-NIC",
       "metadata": {
         "description": "Name of existing Network Security Group for MGMT FW interface"
       }
