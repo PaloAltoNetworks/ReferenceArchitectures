@@ -93,7 +93,7 @@
     },
     "subnet0Name": {
       "type": "string",
-      "defaultValue": "Management",
+      "defaultValue": "mgmt",
       "metadata": {
         "description": "EXISTING Subnet for Management"
       }
