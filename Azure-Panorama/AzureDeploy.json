@@ -61,14 +61,14 @@
     "imageVersion": {
        "type": "string",
        "allowedValues": [
-          "9.1.3",
-          "10.0.0",
-          "latest"
+          "9.0.5",
+          "9.1.2",
+          "10.0.0"
        ],
        "metadata": {
           "description": "PAN OS Version"
        },
-       "defaultValue": "9.1.3"
+       "defaultValue": "9.1.2"
     },
     "virtualNetworkName": {
       "type": "string",
