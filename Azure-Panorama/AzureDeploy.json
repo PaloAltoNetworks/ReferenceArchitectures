@@ -1,0 +1,252 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.13",
+  "parameters": {
+    "vmName": {
+       "type": "string",
+       "metadata": {
+          "description": "Name of Panorama in the Azure portal"
+       },
+       "defaultValue": "Panorama-primary"
+    },
+    "storageAccountName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the EXISTING storage account used to store the VM's disks"
+      }
+    },
+    "storageAccountExistingRG": {
+       "type": "string",
+       "defaultValue" : "",
+       "metadata": {
+          "description": "Storage Account's Resource Group."
+       }
+    },
+    "AvSet": {
+       "type": "string",
+       "metadata": {
+          "description": "EXISTING Availability Set name for Panorama"
+       },
+       "defaultValue": "Management"
+    },
+    "vmSize": {
+       "type": "string",
+       "allowedValues": [
+          "Standard_D3",
+          "Standard_D4",
+          "Standard_D3_v2",
+          "Standard_D4_v2",
+          "Standard_A4",
+          "Standard_DS3_v2",
+          "Standard_DS4_v2"
+       ],
+       "metadata": {
+          "description": "Azure VM size for Panorama"
+       },
+       "defaultValue": "Standard_D3_v2"
+    },
+    "publicIPType": {
+        "type": "string",
+        "allowedValues": [
+          "standard",
+          "basic"
+        ],
+        "metadata": {
+          "description": "Use Standard if this VM will be in the backend pool of a Standard SKU Load Balancer"
+        },
+        "defaultValue": "standard"
+    },
+    "imageVersion": {
+       "type": "string",
+       "allowedValues": [
+          "9.1.3",
+          "10.0.0",
+          "latest"
+       ],
+       "metadata": {
+          "description": "PAN OS Version"
+       },
+       "defaultValue": "9.1.3"
+    },
+    "virtualNetworkName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the EXISTING Virtual Network (VNET)"
+      },
+      "defaultValue": "Management"
+    },
+    "virtualNetworkAddressPrefix": {
+      "type": "string",
+      "defaultValue": "192.168.1.0/24",
+      "metadata": {
+        "description": "EXISTING Virtual network address CIDR"
+      }
+    },
+    "virtualNetworkExistingRGName": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "Name of resource group of EXISTING VNET"
+      }
+    },
+    "subnet0Name": {
+      "type": "string",
+      "defaultValue": "Management",
+      "metadata": {
+        "description": "EXISTING Subnet for Management"
+      }
+    },
+    "subnet0Prefix": {
+      "type": "string",
+      "defaultValue": "192.168.1.0/24",
+      "metadata": {
+        "description": "EXISTING Management subnet CIDR"
+      }
+    },
+    "subnet0StartAddress": {
+      "type": "string",
+      "defaultValue": "192.168.1.6",
+      "metadata": {
+        "description": "Management subnet static address"
+      }
+    },
+    "adminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Username of the administrator account of Panorama"
+      }
+    },
+    "adminPassword": {
+      "type": "securestring",
+      "defaultValue": "",
+      "metadata": {
+        "description": "Password for the administrator account of Panorama"
+      }
+    },
+    "publicIPAddressName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of Panorama's Public Address"
+      }
+    },
+    "nsgName": {
+      "type": "string",
+      "defaultValue": "DefaultNSG",
+      "metadata": {
+        "description": "Name of existing Network Security Group for MGMT FW interface"
+      }
+    }
+  },
+  "variables": {
+    "apiVersion": "2019-07-01",
+    "imagePublisher": "paloaltonetworks",
+    "nicName": "[concat(parameters('vmName'), '-eth')]",
+    "vnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
+    "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
+    "publicIPAddressType": "Dynamic",
+    "subnets": [
+      {
+        "name": "[parameters('subnet0Name')]",
+        "properties": {
+          "addressPrefix": "[parameters('subnet0Prefix')]",
+          "networkSecurityGroup": {
+              "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
+          }
+        }
+      }
+    ],
+    "storageAccountId": "[resourceId(parameters('storageAccountExistingRG'),'Microsoft.Storage/StorageAccounts',parameters('storageAccountName'))]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2017-08-01",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[parameters('publicIPAddressName')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+          "name": "Standard"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "dnsSettings": {
+          "domainNameLabel": "[parameters('publicIPAddressName')]"
+        }
+      }
+    },
+    {
+      "name": "[concat(variables('nicName'), '0')]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2015-06-15",
+      "dependsOn": [
+            "[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]"
+        ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig-mgmt",
+            "properties": {
+              "privateIPAllocationMethod": "Static",
+              "privateIPAddress": "[parameters('subnet0StartAddress')]",
+              "publicIPAddress": {
+                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressName'))]"
+              },
+              "subnet": {
+                "id": "[variables('subnet0Ref')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+        "apiVersion": "[variables('apiVersion')]",
+        "type": "Microsoft.Compute/virtualMachines",
+        "name": "[parameters('vmName')]",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+         "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '0')]"
+      ],
+        "plan": {
+           "name": "byol",
+           "product": "panorama",
+           "publisher": "paloaltonetworks"
+        },
+        "properties": {
+          "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('AvSet'))]"
+                },
+            "hardwareProfile": {
+                "vmSize": "[parameters('vmSize')]"
+            },
+            "osProfile": {
+                "computerName": "[parameters('vmName')]",
+                "adminUsername": "[parameters('adminUsername')]",
+                "adminPassword": "[parameters('adminPassword')]"
+            },
+            "storageProfile": {
+                "imageReference": {
+                    "publisher": "paloaltonetworks",
+                    "offer": "panorama",
+                    "sku": "byol",
+                    "version": "[parameters('imageVersion')]"
+                },
+                "osDisk": {
+                    "name": "osdisk",
+                    "managedDisk": {
+                      "storageAccountType": "[parameters('osDiskType')]"
+                    },
+                    "createOption": "FromImage"
+                   }
+            },
+            "networkProfile": {
+                "networkInterfaces": [
+                  {
+                    "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'0'))]"
+                  }
+                ]
+            }
+        }
+    }
+  ]
+}
