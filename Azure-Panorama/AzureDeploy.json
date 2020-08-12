@@ -107,7 +107,7 @@
     },
     "subnet0StartAddress": {
       "type": "string",
-      "defaultValue": "10.255.1.4",
+      "defaultValue": "10.255.0.4",
       "metadata": {
         "description": "Management subnet static address"
       }
