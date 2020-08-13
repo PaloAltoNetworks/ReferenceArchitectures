@@ -104,7 +104,7 @@
         "description": "EXISTING Management subnet CIDR"
       }
     },
-    "vmIpAddress": {
+    "vmIPAddress": {
       "type": "string",
       "defaultValue": "10.255.0.4",
       "metadata": {
