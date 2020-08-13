@@ -90,21 +90,21 @@
       },
       "defaultValue": "Management"
     },
-    "subnet0Name": {
+    "subnetName": {
       "type": "string",
       "defaultValue": "mgmt",
       "metadata": {
         "description": "EXISTING Subnet for Management"
       }
     },
-    "subnet0Prefix": {
+    "subnetPrefix": {
       "type": "string",
       "defaultValue": "10.255.0.0/24",
       "metadata": {
         "description": "EXISTING Management subnet CIDR"
       }
     },
-    "subnet0StartAddress": {
+    "vmIpAddress": {
       "type": "string",
       "defaultValue": "10.255.0.4",
       "metadata": {
@@ -145,13 +145,13 @@
     "imagePublisher": "paloaltonetworks",
     "nicName": "[concat(parameters('vmName'), '-eth')]",
     "vnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
-    "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
+    "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
     "publicIPAddressType": "Dynamic",
     "subnets": [
       {
-        "name": "[parameters('subnet0Name')]",
+        "name": "[parameters('subnetName')]",
         "properties": {
-          "addressPrefix": "[parameters('subnet0Prefix')]",
+          "addressPrefix": "[parameters('subnetPrefix')]",
           "networkSecurityGroup": {
               "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
           }
@@ -190,7 +190,7 @@
             "name": "ipconfig-mgmt",
             "properties": {
               "privateIPAllocationMethod": "Static",
-              "privateIPAddress": "[parameters('subnet0StartAddress')]",
+              "privateIPAddress": "[parameters('vmIpAddress')]",
               "publicIPAddress": {
                  "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressName'))]"
               },
