@@ -1,48 +1,22 @@
 # Deploy a VM-Series firewall into an existing Azure Resource Group
 
-[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftjschuler%2Freferencearchitectures%2Fdev%2FAzure-Panorama%2FAzureDeploy.json)
+[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpaloaltonetworks%2Freferencearchitectures%2Fmaster%2FAzure-Panorama%2FAzureDeploy.json)
 
-This template deploys Panorama as shown below:
-
-<p align="center">
-  <img src="./Azure-Panorama.png" width="350" title="hover text">
-</p>
+This template deploys Panorama in Azure
 
 
 This template was created to support the deployment of Panorama into an existing Microsoft Azure environment that has the following items already deployed:
 
                     - VNET (assumes "Management" is already created with following subnets):
-                      - Management (192.168.1.0/24)
-                    - Resource Group (for the firewall) with the following resources:
-                      - Availability Set for the firewall
-                      - Storage Account for the firewall VHD
-                      - Public IP address (Standard SKU) for the firewall management interface
+                      - Management (10.255.0.0/24)
+                    - Resource Group (for Panorama) with the following resources:
+                      - Availability Set for Panorama
+                      - Storage Account for the Panorama Boot Log
+                      - Public IP address (Standard SKU) for Panorama's management interface
                     
             
 FEATURES:
-- You may choose the version of software Panorama is running (7.1.1, 8.0.0, 8.1.0 or latest).
-- You may choose the deployment SKU for the firewall: (byol, bundle1 or bundle2).
-- Static IP address assignment is used for all the firewall interfaces.
-
-
-The following Storage Account types are supported:
-
-                    -Standard_LRS (used in deployment guide)
-                    -Standard_GRS
-                    -Standard_RAGRS
-                    -Premium_LRS
-                    
-The following VMs are supported:
-
-                    -Standard_D3
-                    -Standard_D4
-                    -Standard_D3_v2 (used in deployment guide)
-                    -Standard_D4_v2
-                    -Standard_A4
-                    -Standard_DS3_v2
-                    -Standard_DS4_v2
-        
-NOTE: Make sure the VMs are supported in the specific Storage Account Type and Azure Region.
+- You may choose the version of software Panorama is running (9.1.2, 10.0.0 or latest).
 
 # Support
 
