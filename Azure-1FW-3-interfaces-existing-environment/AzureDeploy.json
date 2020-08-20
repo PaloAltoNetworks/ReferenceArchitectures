@@ -7,7 +7,7 @@
        "metadata": {
           "description": "Name of VM-Series FW in the Azure portal"
        },
-       "defaultValue": "ARA-VMFW1"
+       "defaultValue": "vmseries-1"
     },
     "storageAccountName": {
       "type": "string",
@@ -27,7 +27,7 @@
        "metadata": {
           "description": "EXISTING Availability Set name for Firewalls"
        },
-       "defaultValue": "ARAFW-AS"
+       "defaultValue": ""
     },
     "vmSize": {
        "type": "string",
@@ -85,7 +85,7 @@
       "metadata": {
         "description": "Name of the EXISTING Virtual Network (VNET)"
       },
-      "defaultValue": "AzureRA-VNet"
+      "defaultValue": "Transit-VNet"
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
@@ -185,7 +185,7 @@
     },
     "nsgName": {
       "type": "string",
-      "defaultValue": "DefaultNSG",
+      "defaultValue": "None",
       "metadata": {
         "description": "Name of existing Network Security Group for MGMT FW interface"
       }
