@@ -28,7 +28,7 @@ FEATURES:
   - (1) management interface 
   - (3) dataplane interfaces
   
-- You may choose the version of software the firewall is running (7.1.1, 8.0.0, 8.1.0 or latest).
+- You may choose the version of software the firewall is running (9.1.3, 10.0.0 or latest).
 - You may choose the deployment SKU for the firewall: (byol, bundle1 or bundle2).
 - Static IP address assignment is used for all the firewall interfaces.
 
