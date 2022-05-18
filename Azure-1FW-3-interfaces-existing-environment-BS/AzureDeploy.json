@@ -230,10 +230,10 @@
         "description": "Name of existing Network Security Group for MGMT FW interface"
       }
     },
-    "userData": {
+    "customData": {
       "type": "string",
       "metadata": {
-        "description": "User Data - separate entries with a semicolon"
+        "description": "Azure Custom Data - separate entries with a semicolon"
       }
     }
   },
@@ -247,7 +247,7 @@
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
     "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
     "publicIPAddressType": "Dynamic",
-	"customDataBase64": "[base64(parameters('userData'))]",
+    "customDataBase64": "[base64(parameters('customData'))]",
     "customDataField": "[concat('storage-account=', parameters('BootstrapStorageAccount'), ',access-key=', parameters('StorageAccountAccessKey'), ',file-share=', parameters('StorageAccountFileShare'),',share-directory=', parameters('StorageAccountFileShareDirectory'))]",
     "subnets": [
       {
