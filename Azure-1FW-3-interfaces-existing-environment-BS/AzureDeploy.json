@@ -61,12 +61,13 @@
        "allowedValues": [
           "9.1.3",
           "10.0.0",
+	  "10.1.0",
           "latest"
        ],
        "metadata": {
           "description": "PAN OS Version"
        },
-       "defaultValue": "9.1.3"
+       "defaultValue": "10.1.0"
     },
     "imageSku": {
        "type": "string",
@@ -78,7 +79,7 @@
        "metadata": {
           "description": "Firewall License Model"
        },
-       "defaultValue": "bundle2"
+       "defaultValue": "byol"
     },
     "bootstrapFirewall": {
        "type": "string",
@@ -124,7 +125,7 @@
       "metadata": {
         "description": "Name of the EXISTING Virtual Network (VNET)"
       },
-      "defaultValue": "Transit-VNet"
+      "defaultValue": "Transit"
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
@@ -228,6 +229,12 @@
       "metadata": {
         "description": "Name of existing Network Security Group for MGMT FW interface"
       }
+    },
+    "userData": {
+      "type": "string",
+      "metadata": {
+        "description": "User Data - separate entries with a semicolon"
+      }
     }
   },
   "variables": {
@@ -240,6 +247,7 @@
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
     "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
     "publicIPAddressType": "Dynamic",
+	"customDataBase64": "[base64(parameters('userData'))]",
     "customDataField": "[concat('storage-account=', parameters('BootstrapStorageAccount'), ',access-key=', parameters('StorageAccountAccessKey'), ',file-share=', parameters('StorageAccountFileShare'),',share-directory=', parameters('StorageAccountFileShareDirectory'))]",
     "subnets": [
       {
@@ -444,7 +452,8 @@
             "osProfile": {
                 "computerName": "[parameters('vmName')]",
                 "adminUsername": "[parameters('adminUsername')]",
-                "adminPassword": "[parameters('adminPassword')]"
+                "adminPassword": "[parameters('adminPassword')]",
+		"customData": "[variables('customDataBase64')]"
             },
             "storageProfile": {
                 "imageReference": {
