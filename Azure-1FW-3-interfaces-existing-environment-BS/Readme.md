@@ -12,10 +12,11 @@ This template deploys a (3) interface Palo Alto Networks VM-Series firewall as s
 This template supports two deployment options:
 - manual deployment of VM-Series.
 - automated bootstrapping of VM-Series when used with Panorama and you have already created the bootstrap package and deployed to a filesystem in an Azure Storage Account.
+- automated bootstrapping of VM-Series when used with Panorama where you add Azure custom data for the virtual machine
 
 This template was created to support the deployment of a 3 interface Palo Alto Networks firewall into an existing Microsoft Azure environment that has the following items already deployed:
 
-                    - VNET (assumes "AzureRA-VNet" is already created with following subnets):
+                    - VNET (assumes "Transit" is already created with following subnets):
                       - Management (10.110.255.0/24)
                       - Public (10.110.129.0/24)
                       - Private (10.110.0.0/24)
@@ -30,7 +31,7 @@ FEATURES:
   - (1) management interface 
   - (2) dataplane interfaces
   
-- You may choose the version of software the firewall is running (9.1.3, 10.0.0 or latest).
+- You may choose the version of software the firewall is running (9.1.3, 10.0.0, 10.1.0, or latest).
 - You may choose the deployment SKU for the firewall: (byol, bundle1 or bundle2).
 - Static IP address assignment is used for all the firewall interfaces.
 
