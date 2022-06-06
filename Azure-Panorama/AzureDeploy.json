@@ -56,12 +56,12 @@
        "type": "string",
        "allowedValues": [
           "9.1.2",
-          "10.1.5-h1"
+          "10.1.5"
        ],
        "metadata": {
           "description": "PAN OS Version"
        },
-       "defaultValue": "10.1.6"
+       "defaultValue": "10.1.5"
     },
     "virtualNetworkName": {
       "type": "string",
