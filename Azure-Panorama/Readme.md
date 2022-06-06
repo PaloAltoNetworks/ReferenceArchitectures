@@ -16,7 +16,7 @@ This template was created to support the deployment of Panorama into an existing
                     
             
 FEATURES:
-- You may choose the version of software Panorama is running (9.1.2, 10.0.0 or latest).
+- You may choose the version of software Panorama is running (9.1.2, 10.1.5).
 
 # Support
 
