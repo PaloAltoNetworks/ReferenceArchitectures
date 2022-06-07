@@ -59,14 +59,14 @@
     "imageVersion": {
        "type": "string",
        "allowedValues": [
-          "9.1.14",
-	  "10.1.5",
+          "9.1.10",
+	  "10.1.0",
           "latest"
        ],
        "metadata": {
           "description": "PAN OS Version"
        },
-       "defaultValue": "10.1.5"
+       "defaultValue": "10.1.0"
     },
     "imageSku": {
        "type": "string",
