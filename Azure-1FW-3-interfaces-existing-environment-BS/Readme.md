@@ -55,6 +55,19 @@ The following VMs are supported:
         
 NOTE: Make sure the VMs are supported in the specific Storage Account Type and Azure Region.
 
+The custom data field is used for bootstrap configuration:
+
+                    -type=dhcp-client;
+                    -panorama-server=10.255.0.4;
+                    -panorama-server-2=10.255.0.5;
+                    -tplname=Transit;
+                    -dgname=Transit;
+                    -dns-primary=168.63.129.16;
+                    -authcodes=D1234567;
+                    -vm-auth-key=123456789012345;
+                    -dhcp-accept-server-hostname=yes;
+                    -dhcp-accept-server-domain=yes;
+
 After deployment, this firewall can be integrated into Azure load balancer backend pools or Azure application gateway backend pools using the Azure Resource Manager Portal.
 
 # Support
