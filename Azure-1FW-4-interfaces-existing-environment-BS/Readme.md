@@ -1,6 +1,6 @@
 # Deploy a VM-Series firewall into an existing Azure Resource Group
 
-[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpaloaltonetworks%2Freferencearchitectures%2Fmaster%2FAzure-1FW-4-interfaces-existing-environment-BS%2FAzureDeploy.json)
+[<img src="https://aka.ms/deploytoazurebutton"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpaloaltonetworks%2Freferencearchitectures%2Fmaster%2FAzure-1FW-4-interfaces-existing-environment-BS%2FAzureDeploy.json)
 
 This template deploys a (4) interface Palo Alto Networks VM-Series firewall as shown below:
 
