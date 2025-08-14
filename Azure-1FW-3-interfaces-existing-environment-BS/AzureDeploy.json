@@ -60,7 +60,7 @@
        "type": "string",
        "allowedValues": [
           "10.2.6",
-	  "11.2.6",
+	      "11.2.6",
           "latest"
        ],
        "metadata": {
