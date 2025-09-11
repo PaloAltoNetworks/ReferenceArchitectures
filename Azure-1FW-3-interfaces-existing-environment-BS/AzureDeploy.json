@@ -60,13 +60,13 @@
        "type": "string",
        "allowedValues": [
           "10.2.6",
-	      "11.2.6",
+	      "11.2.8",
           "latest"
        ],
        "metadata": {
           "description": "PAN OS Version"
        },
-       "defaultValue": "11.2.6"
+       "defaultValue": "11.2.8"
     },
     "imageSku": {
        "type": "string",
