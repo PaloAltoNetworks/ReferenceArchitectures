@@ -401,8 +401,8 @@
                     "caching": "ReadWrite",
                     "createOption": "FromImage",
                     "managedDisk": {
-                                      "storageAccountType": "Premium_LRS"
-                        }
+                                      "storageAccountType": "Premium_LRS",
+                        },
                  },
             "networkProfile": {
                 "networkInterfaces": [{
