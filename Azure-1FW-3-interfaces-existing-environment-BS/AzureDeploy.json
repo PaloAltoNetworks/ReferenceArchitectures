@@ -396,15 +396,14 @@
                     "sku": "[parameters('imageSku')]",
                     "version": "[parameters('imageVersion')]"
                 },
-                "osDisk": {
-                    "name": "osdisk",
-                    "vhd": {
-                       "uri": "[concat('http://', parameters('storageAccountName'), '.blob.core.windows.net/vhds/', parameters('vmName'), '-', variables('imageOffer'), '-', parameters('imageSku'), '.vhd')]"
-                     },
-                     "caching": "ReadWrite",
-                     "createOption": "FromImage"
-                   }
-            },
+             "osDisk": {
+                    "name": "[concat(parameters('vmName'), '-osdisk')]",
+                    "caching": "ReadWrite",
+                    "createOption": "FromImage",
+                    "managedDisk": {
+                                      "storageAccountType": "Premium_LRS"
+                        }
+                 },
             "networkProfile": {
                 "networkInterfaces": [{
                     "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'0'))]",
