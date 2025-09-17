@@ -25,12 +25,13 @@
         "Standard_D4_v2",
         "Standard_A4",
         "Standard_DS3_v2",
-        "Standard_DS4_v2"
+        "Standard_DS4_v2",
+        "Standard_D4s_v3"
       ],
       "metadata": {
         "description": "Azure VM size for VM-Series"
       },
-      "defaultValue": "Standard_D3_v2"
+      "defaultValue": "Standard_D4s_v3"
     },
     "publicIPType": {
       "type": "string",
